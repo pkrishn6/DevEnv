@@ -1,0 +1,4 @@
+Host dev
+     HostName 192.168.100.63
+     user pkumar
+     IdentityFile ~/.ssh/id_rsa
