@@ -1,7 +1,5 @@
 #! /bin/bash
 
-# ALL GO SCRIPT ALIASES.
-alias g='source ~/.vim/scripts/gb.bash'
 
 #short-cut to the commands.
 alias c='clear'

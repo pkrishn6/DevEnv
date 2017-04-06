@@ -3,29 +3,16 @@
 "==============================================================================
 execute pathogen#infect()
 syntax on
-filetype plugin indent on
-"==============================================================================
-"coding standard guidelines.
-"==============================================================================
-set shiftwidth=4 tabstop=4
-set softtabstop=4
-set expandtab
-set textwidth=80                "line width
-set autoindent
-set smartindent
-set cindent
-
 
 "==============================================================================
 "Vim settings
 "==============================================================================
 set ruler                       "disply the row col number in the task bar
-"set ic                          "ignore case in search
+set ic                          "ignore case in search
 set laststatus=2                "status bar on always
 set showtabline=2               "tab bar on alwasy
 set splitright                  "new window alwasys on right
 set wildmenu                    "smart cmd completion option on status bar
-set autoindent                  "next line starts in the same point
 set incsearch                   "highlights search patter while typing pattern
 set hlsearch                    "highlights all the search pattern
 set tagstack                    "control t and ] for tags.
@@ -33,14 +20,15 @@ set guioptions-=T               "disable the tools bar for gvim
 set ch=1                        "set the command line high
 set tabpagemax=10               "set tab limits
 set fillchars+=vert:\           "set the vertical split without any char
-set cursorline                  "higlight the cursor line
 "set number                     "show line number
 set wildignore+=*.o,*.obj,*.so  "ignore these files
 
 set filetype=on
+map <C-E> $
+map <C-A> 0|
 
 "==============================================================================
-"Plugins (~sridharp/.vim/plugin)
+"Plugins (~pkumar/.vim/plugin)
 "==============================================================================
 "Tlist
 "cscopeMenu
@@ -83,8 +71,8 @@ nmap <leader>' :NERDTreeToggle <CR>
 "Cscope stuffs"
 "==============================================================================
 "set csprg=~/bin/cscope
-cs add $WS_BASE_/$BR_INFO_DIR/cscope.out $WS_BASE_
-set tags=$WS_BASE_/$BR_INFO_DIR/tags
+cs add $WS_BASE/cscope.out $WS_BASE
+set tags=$WS_BASE_/tags
 set cscopetag
 
 set csto=0                      "Search cscope first then tags, (1 otherwise)
@@ -107,6 +95,9 @@ nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+
+map <C-E> $
+map <C-A> 0|
 
 
 nmap <C-\>[ :Ggrep <cword><CR><CR>
@@ -134,22 +125,10 @@ nmap <leader>v :vsplit <CR>
 nmap <leader>h :split <CR>
 
 nmap <C-\>f :echo expand('%:p')<CR>
-nmap <C-\>r :so ~/.vimrc<CR>
-
-"CommandT
-"============
-"Default map
-"\t for CommandT
-"C-c to close the CommandT
-"tab to switch between search and result
 
 "Fugitive
-"========
+""========
 nmap <C-\>b :Gblame<CR>
-
-"Gundo
-"=====
-nmap <leader>u :GundoToggle<CR>
 
 "Tlist keymap
 "=============
@@ -158,26 +137,6 @@ nmap <leader>] :TagbarToggle<CR><CR>
 "MRU keymap
 "=============
 nmap <leader>/ :MRU <CR>
-
-"Conque term keymap
-"==================
-nmap <C-\>t :ConqueTermTab bash <CR>
-nmap <C-\>v :ConqueTermVSplit bash <CR>
-
-" FULL SCREEN for ubuntu
-" ======================
-map <silent> <C-F11>
-\    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
-
-" Stripping white space
-" =====================
-function! g:FixFormat()
-    :StripWhitespace
-    :retab
-endfunction
-command! FixF call g:FixFormat()
-nmap <C-\>w :FixF<CR>
-"nmap <C-\>w :StripWhitespace <CR><CR>
 
 "==============================================================================
 "Setting Fonts
@@ -223,7 +182,7 @@ nmap <leader>q :qa! <CR><CR>
 
 " Mouse support
 if has("mouse")
-    set mouse=a
+    set mouse-=a
     set mousehide
 endif
 

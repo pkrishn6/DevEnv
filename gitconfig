@@ -7,14 +7,14 @@
 	autocrlf = false
 	safecrlf = true
 	eol = lf
-    editor = vim
-	excludesfile = /Users/sridhar/.gitignore
+        editor = vim
+	excludesfile = ~/.gitignore_global
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 	ui = true
-    blame = true
+        blame = true
 	ui = true
 [alias]
     lg = log --color --pretty=format:'%Cblue%h%Creset - %C(magenta bold)%d%Creset %s %Cgreen(%ar) %C(bold red)<%an>%Creset' --abbrev-commit --no-merges

@@ -20,7 +20,6 @@ RESET='\[\e[0m\]'
 
 #set the bash to vi mode
 set -o vi
-stty -ixon
 export TERM="xterm-256color"
 
 #set up the GIT and SVN prompts
@@ -52,8 +51,9 @@ fi
 # Add $HOME/bin to PATH
 export PATH="/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/go/bin:~/gotool/bin"
 
-export SR_CODE_BASE=$HOME/workspace/snaproute
-export GOPATH=$HOME/gotool:$SR_CODE_BASE/snaproute/:$SR_CODE_BASE/external/:$SR_CODE_BASE/generated/
+export SR_CODE_BASE=$HOME/dev/master
+export WS_BASE=$SR_CODE_BASE
+export GOPATH=$SR_CODE_BASE/snaproute:$SR_CODE_BASE/external:$SR_CODE_BASE/generated
 export GOROOT=/usr/local/go
 
 # Source code paths
