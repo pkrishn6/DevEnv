@@ -1,21 +1,21 @@
 [user]
-    name = Prasanna kumar Krishnamurthy 
+    name = Prasanna kumar Krishnamurthy
     email = pkumar@snaproute.com
 [core]
-	pager = less -R
-	preloadindex = true
-	autocrlf = false
-	safecrlf = true
-	eol = lf
+        pager = less -R
+        preloadindex = true
+        autocrlf = false
+        safecrlf = true
+        eol = lf
         editor = vim
-	excludesfile = ~/.gitignore_global
+        excludesfile = ~/.gitignore_global
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	ui = true
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
         blame = true
-	ui = true
+        ui = true
 [alias]
     lg = log --color --pretty=format:'%Cblue%h%Creset - %C(magenta bold)%d%Creset %s %Cgreen(%ar) %C(bold red)<%an>%Creset' --abbrev-commit --no-merges
     graph = log --color --pretty=format:'%Cblue%h%Creset - %C(magenta bold)%d%Creset %s %Cgreen(%ar) %C(bold red)<%an>%Creset' --abbrev-commit --graph
@@ -27,10 +27,10 @@
     update = pull --rebase
     co = checkout
 [credential]
-	helper = cache --timeout=3600
+        helper = cache --timeout=3600
 [push]
-	default = simple
+        default = simple
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        required = true
