@@ -1,0 +1,64 @@
+#!/bin/bash
+
+echo "setting snaproute code base"
+export SR_CODE_BASE=$(pwd)
+echo $SR_CODE_BASE
+echo "setting third party code base"
+export SR_THIRD_PARTY=$HOME/third_party
+echo $SR_THIRD_PARTY
+echo "setting go path"
+export GOPATH=$SR_CODE_BASE/snaproute:$SR_THIRD_PARTY:$SR_CODE_BASE/generated
+echo $GOPATH
+export PATH=$PATH:/usr/local/go/bin
+export PKG_CONFIG_PATH=$SR_CODE_BASE/build/arm/lib/pkgconfig/:$SR_CODE_BASE/build/x86_64/lib/pkgconfig/
+
+echo "setting mrconfig"
+loc=$(basename "${SR_CODE_BASE}")
+echo $loc
+if [ "$loc" == "master" ]
+then
+        cp ~/.mrconfig_master ~/.mrconfig
+elif [ "$loc" == "cavm_dev" ]
+then
+        cp ~/.mrconfig_cavm ~/.mrconfig
+elif [ "$loc" == "vrf_dev" ]
+then
+        cp ~/.mrconfig_dev ~/.mrconfig
+elif [ "$loc" = "vrf_dev2" ]
+then
+    cp ~/.mrconfig_vrf ~/.mrconfig
+elif [ "$loc" = "voyager_dev" ]
+then
+    cp ~/.mrconfig_voyager ~/.mrconfig
+elif [ "$loc" = "release2.0" ]
+then
+    cp ~/.mrconfig_rel ~/.mrconfig
+elif [ "$loc" = "mino" ]
+then
+    cp ~/.mrconfig_mino ~/.mrconfig
+else
+        echo "Boom! Invalid dir"
+        return -1
+fi
+
+# Source code paths
+export l3=$SR_CODE_BASE/snaproute/src/l3
+export l2=$SR_CODE_BASE/snaproute/src/l2
+export asicd=$SR_CODE_BASE/snaproute/src/asicd
+export opticd=$SR_CODE_BASE/snaproute/src/opticd
+export minom=$SR_CODE_BASE/snaproute/src/mino-masterd
+export minot=$SR_CODE_BASE/snaproute/src/mino-testd
+export infra=$SR_CODE_BASE/snaproute/src/infra
+export utils=$SR_CODE_BASE/snaproute/src/utils
+export rib=$SR_CODE_BASE/snaproute/src/l3/rib
+export mpls=$SR_CODE_BASE/snaproute/src/mpls
+export config=$SR_CODE_BASE/snaproute/src/config
+export plat=$SR_CODE_BASE/snaproute/src/infra/platformd
+export arp=$SR_CODE_BASE/snaproute/src/l3/arp
+export ospf=$SR_CODE_BASE/snaproute/src/l3/ospf
+export bgp=$SR_CODE_BASE/snaproute/src/l3/bgp
+export rel=$SR_CODE_BASE/reltools
+export mo=$SR_CODE_BASE/snaproute/src/models/objects
+export ven=$SR_CODE_BASE/snaproute/src/vendors
+export nsl=$SR_CODE_BASE/snaproute/src/vendors/bcm/opennsl-3.1.0.8-odp
+export out=$SR_CODE_BASE/snaproute/src/out/bin
