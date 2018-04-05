@@ -1,6 +1,6 @@
 [user]
     name = Prasanna kumar Krishnamurthy
-    email = pkumar@snaproute.com
+    email = prasanna.krishnamurthy@petuum.com
 [core]
         pager = less -R
         preloadindex = true
@@ -34,3 +34,4 @@
         clean = git-lfs clean -- %f
         smudge = git-lfs smudge -- %f
         required = true
+	process = git-lfs filter-process

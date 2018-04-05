@@ -1,0 +1,9 @@
+host mac
+ HostName 10.1.1.1
+ IdentityFile ~/.ssh/mac_rsa
+ User prasanna.krishnamurthy
+
+host github.com
+ HostName github.com
+ IdentityFile ~/.ssh/git_rsa
+ User git

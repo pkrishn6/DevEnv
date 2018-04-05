@@ -6,6 +6,7 @@ sv_log
 *.swp
 *.swn
 *.swo
+*.pyc
 build/
 .cproject
 .project
