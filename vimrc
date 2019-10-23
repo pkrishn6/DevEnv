@@ -11,7 +11,7 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Bundle 'chase/vim-ansible-yaml'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'Shougo/neocomplcache.vim'
 call vundle#end()
 
 syntax on

@@ -11,3 +11,28 @@ function myscp() {
 	scp prasanna.krishnamurthy@mac:/Users/prasanna.krishnamurthy/Desktop/Work/$1 ~
 }
 
+function acp() {
+	scp $1 centos@master:/home/centos
+}
+
+function akube() {
+	kubectl --kubeconfig ~/.kube/aws.config $@
+}
+
+function dkube() {
+	kubectl --kubeconfig ~/.kube/dind.config $@
+}
+
+function master() {
+	ssh master
+}
+
+function w1() {
+        ssh w1
+}
+
+function w2() {
+	ssh w2
+}
+
+

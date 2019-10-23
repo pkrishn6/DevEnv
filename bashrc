@@ -22,6 +22,8 @@ export TERM="xterm-256color"
 source ~/.vim/branch_prompt.sh
 export __PLATFORM__=`uname`
 
+eval $(thefuck --alias fix)
+
 if [[ "$__PLATFORM__" == 'Linux' ]]; then
     # Ubuntu
     export PS1="$BLUE\u$YELLOW@$RED [VM] $YELLOW"'$(L_PWD)'"$RED"'$(__git_ps1)$(__svn_prompt)'" $YELLOW>$RESET"
