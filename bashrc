@@ -22,8 +22,6 @@ export TERM="xterm-256color"
 source ~/.vim/branch_prompt.sh
 export __PLATFORM__=`uname`
 
-eval $(thefuck --alias fix)
-
 if [[ "$__PLATFORM__" == 'Linux' ]]; then
     # Ubuntu
     export PS1="$BLUE\u$YELLOW@$RED [VM] $YELLOW"'$(L_PWD)'"$RED"'$(__git_ps1)$(__svn_prompt)'" $YELLOW>$RESET"
@@ -36,5 +34,7 @@ if [ -f $HOME/helper ]; then
 	. $HOME/helper
 fi
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/vagrant/bin
-export GOPATH=$HOME/go
+export PATH=$PATH:/home/pkrishnamurthy/Snowflake/trunk/ExecPlatform/bin
+export WS="/home/pkrishnamurthy/Snowflake/trunk/GlobalServices/src/main/java/com/snowflake"
+export WS2="/home/pkrishnamurthy/Snowflake/trunk/GlobalServices/src/main/java/com/snowflake/services/dedicated"
+export ADAPTIVE="/home/pkrishnamurthy/Snowflake/trunk/GlobalServices/modules/services/warehouse/wss-impl/src/main/java/com/snowflake/services/dedicated/warehousescheduling/adaptive"
